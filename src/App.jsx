@@ -1,9 +1,11 @@
 import './App.css'
-import Counter from './Counter'
+// import Counter from './Counter'
+import Meme from './Meme'
 function App() {
   return(
     <>
-        <Counter/>
+        {/* <Counter/> */}
+        <Meme/>
     </>
   )
 }
