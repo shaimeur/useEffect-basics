@@ -3,6 +3,8 @@ import { useState,useEffect } from 'react'
 const Counter = () =>{
     const [counter,setCounter] = useState(0);
 
+
+
   useEffect(()=>{
     // the code that we want to run
     console.log("in the useEffect: ", counter)

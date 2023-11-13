@@ -7,6 +7,25 @@ import './Memes.css'
 const Meme = () =>{
 
     const [images,setImages] = useState([]) ;
+    const [title,setTitle] = useState('')
+
+
+
+    useEffect(()=>{
+        document.title = title;
+
+        window.scroll({
+            top: Number.MAX_SAFE_INTEGER ,
+            behavior:'smooth'
+        })
+
+
+    },[images,title])
+
+
+    // useEffect(()=>{
+
+    // },[images])
 
     const addImage = (id) =>{
         const selectedImage = data.find((item) => item.id === id);
@@ -19,7 +38,6 @@ const Meme = () =>{
                 ]
                ))
         }
-
     }
 
     const deleteImage = (id) =>{
@@ -29,8 +47,8 @@ const Meme = () =>{
 
     return (
         <div className='Memes'>
-            <h1>Memes</h1>
-
+            <h1>Memes : {title}</h1>
+        <input type="text" value={title} onChange={(e)=> setTitle( e.target.value)} />
             {
                 images.map(({id,img})=>(
                     <img onClick={() => deleteImage(id)} key={id} src={img}/>
