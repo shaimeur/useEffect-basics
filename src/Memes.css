@@ -9,7 +9,7 @@
 section{
     margin: 100px;
     display: flex;
-    flex-direction: row;
+    /* flex-direction: row; */
     justify-content: space-around;
     width: 100%;
 
@@ -17,4 +17,5 @@ section{
 img{
     margin: 10px;
     width: 600px;
+    height: 750px;
 }

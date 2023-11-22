@@ -12,20 +12,19 @@ const Meme = () =>{
 
 
     useEffect(()=>{
-        document.title = title;
+        console.log("change when the image change")
 
         window.scroll({
             top: Number.MAX_SAFE_INTEGER ,
             behavior:'smooth'
         })
+    },[images])
 
 
-    },[images,title])
-
-
-    // useEffect(()=>{
-
-    // },[images])
+    useEffect(()=>{
+        console.log("change when the title change")
+        document.title = title;
+    },[title])
 
     const addImage = (id) =>{
         const selectedImage = data.find((item) => item.id === id);
