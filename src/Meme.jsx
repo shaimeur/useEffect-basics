@@ -28,15 +28,19 @@ const Meme = () =>{
 
     const addImage = (id) =>{
         const selectedImage = data.find((item) => item.id === id);
-        if(selectedImage){
-            setImages((prev) =>(
-                [...prev,{
-                        id:uuidv4(),
-                        img: selectedImage.img
-                    }
-                ]
-               ))
-        }
+        setImages((prev)=>(
+
+            [
+                ...prev,
+                {
+                    id:self.crypto.randomUUID(),
+                    img:selectedImage.img
+                }
+
+            ]
+
+
+    ))
     }
 
     const deleteImage = (id) =>{
